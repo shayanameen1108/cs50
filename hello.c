@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-  char *message = "Hello, World!";
+  const char *message = "Hello, World!";
 
   printf("%s\n", message);
 
