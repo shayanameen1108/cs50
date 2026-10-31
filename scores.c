@@ -12,6 +12,8 @@ int main() {
   }
 
   printf("Average Score: %f\n", avg(scores, N));
+
+  return 0;
 }
 
 float avg(int numbers[], int size) {
