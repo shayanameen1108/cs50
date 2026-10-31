@@ -5,11 +5,7 @@ float avg(int numbers[], int size);
 int main() {
   constexpr int N = 3;
 
-  int scores[N];
-
-  scores[0] = 72;
-  scores[1] = 73;
-  scores[2] = 33;
+  int scores[] = {72, 73, 33};
 
   for (int i = 0; i < N; i++) {
     printf("Score %i: %i\n", i + 1, scores[i]);
