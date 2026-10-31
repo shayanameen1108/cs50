@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
   const char *message = "Hello, World!";
 
   printf("Length of '%s' is: %zu\n", message, strlen(message));

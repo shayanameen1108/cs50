@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
   const char *message = "Hello, World!";
 
   printf("%s\n", message);

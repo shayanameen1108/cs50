@@ -2,7 +2,7 @@
 
 float avg(int numbers[], int size);
 
-int main() {
+int main(void) {
   constexpr int N = 3;
 
   int scores[] = {72, 73, 33};
