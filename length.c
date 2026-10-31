@@ -6,5 +6,9 @@ int main() {
 
   printf("Length of '%s' is: %zu\n", message, strlen(message));
 
+  for (int i = 0, n = strlen(message); i < n; i++) {
+    printf("%i. %c\n", i + 1, message[i]);
+  }
+
   return 0;
 }
