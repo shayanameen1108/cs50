@@ -8,13 +8,7 @@ typedef struct node {
 } node;
 
 // Frees every node in the list
-void free_list(node *head) {
-  while (head != NULL) {
-    node *next = head->next; // Save the next node before freeing
-    free(head);
-    head = next;
-  }
-}
+void free_list(node *head);
 
 int main(void) {
   int array[] = {1, 2, 3};
@@ -53,4 +47,13 @@ int main(void) {
   free_list(head);
 
   return 0;
+}
+
+// Frees every node in the list
+void free_list(node *head) {
+  while (head != NULL) {
+    node *next = head->next; // Save the next node before freeing
+    free(head);
+    head = next;
+  }
 }
