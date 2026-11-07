@@ -8,11 +8,11 @@ typedef struct node {
 } node;
 
 // Frees every node in the list
-void free_list(node *list) {
-  while (list != NULL) {
-    node *next = list->next; // Save the next node before freeing
-    free(list);
-    list = next;
+void free_list(node *head) {
+  while (head != NULL) {
+    node *next = head->next; // Save the next node before freeing
+    free(head);
+    head = next;
   }
 }
 
@@ -20,7 +20,7 @@ int main(void) {
   int array[] = {1, 2, 3};
   int n = sizeof(array) / sizeof(array[0]);
 
-  node *list = NULL; // Head of the list
+  node *head = NULL; // Head of the list
   node *tail = NULL; // Last node, so appending is O(1)
 
   for (int i = 0; i < n; i++) {
@@ -29,7 +29,7 @@ int main(void) {
 
     // Out of memory: free what we already built and fail
     if (temp == NULL) {
-      free_list(list);
+      free_list(head);
       return 1;
     }
 
@@ -37,8 +37,8 @@ int main(void) {
     temp->next = NULL;
 
     // Append the new node at the end of the list
-    if (list == NULL) {
-      list = temp; // First node becomes the head
+    if (head == NULL) {
+      head = temp; // First node becomes the head
     } else {
       tail->next = temp;
     }
@@ -46,11 +46,11 @@ int main(void) {
   }
 
   // Walk the list and print each number
-  for (node *ptr = list; ptr != NULL; ptr = ptr->next) {
+  for (node *ptr = head; ptr != NULL; ptr = ptr->next) {
     printf("%i\n", ptr->number);
   }
 
-  free_list(list);
+  free_list(head);
 
   return 0;
 }
